@@ -1,165 +1,66 @@
 # <picture><source media="(prefers-color-scheme: dark)" srcset="docs/references/badges/openchamber-logo-dark.svg"><img src="docs/references/badges/openchamber-logo-light.svg" width="32" height="32" align="absmiddle" /></picture> OpenChamber
-
 [![GitHub stars](https://img.shields.io/github/stars/openchamber/openchamber?style=flat&labelColor=100F0F&color=66800B)](https://github.com/openchamber/openchamber/stargazers)
 [![GitHub release](https://img.shields.io/github/v/release/openchamber/openchamber?style=flat&labelColor=100F0F&color=205EA6)](https://github.com/openchamber/openchamber/releases/latest)
 [![Discord](https://img.shields.io/badge/Discord-join.svg?style=flat&labelColor=100F0F&color=8B7EC8&logo=discord&logoColor=FFFCF0)](https://discord.gg/ZYRSdnwwKA)
 [![Support the project](https://img.shields.io/badge/Support-Project-black?style=flat&labelColor=100F0F&color=EC8B49&logo=patreon&logoColor=FFFCF0)](https://www.patreon.com/openchamber)
-
 <a href="https://www.blacksmith.sh/"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/references/badges/blacksmith-dark.svg"><img src="docs/references/badges/blacksmith-light.svg" height="28" alt="CI powered by Blacksmith" /></picture></a>
+## 运行智能体任务，全程保持掌控，随时随地交付
+**OpenChamber 是一套开源工作空间，可在桌面端、网页、VS Code 和移动端运行与审阅 AI 编码任务。**
 
-## Run agent work. Keep control. Ship from anywhere.
-
-**OpenChamber is an open-source workspace for running and reviewing AI coding work on desktop, web, VS Code, and mobile.**
-
-Start agent work, see what changed, and take it through review and release. Your projects and sessions remain available when you switch devices or step away.
+启动智能体任务，查看代码变更，完成评审直至发布。切换设备或暂时离开时，你的项目与任务会话状态会持续保留。
 
 ![OpenChamber Chat](docs/references/chat_example.png)
-
 <details>
-<summary>More screenshots</summary>
-
-![VS Code Extension](packages/vscode/extension.jpg)
-
+<summary>更多截图</summary>
+![VS Code 扩展](packages/vscode/extension.jpg)
 <p>
-<img src="docs/references/pwa_chat_example.png" width="45%" alt="OpenChamber PWA chat">
-<img src="docs/references/pwa_diff_example.png" width="45%" alt="OpenChamber PWA diff review">
+<img src="docs/references/pwa_chat_example.png" width="45%" alt="OpenChamber PWA 对话界面">
+<img src="docs/references/pwa_diff_example.png" width="45%" alt="OpenChamber PWA 差异评审界面">
 </p>
-
 </details>
 
-## What you can do with OpenChamber
+## OpenChamber 可以实现这些能力
+### 可自主持续推进的任务目标
+通过**会话目标（Session Goals）**为一次任务设定终点。OpenChamber 在每一轮执行后校验结果，驱动智能体持续工作，直到达成目标、遇到阻塞或到达你设定的执行上限。即使关闭应用，任务也可继续后台运行。
 
-### Goals that continue on their own
+### 多任务运行对比与结果合并
+使用**多实例运行（Multi-run）**，将同一个任务同时交给最多五个大模型，每个模型独立会话、可独立配置工作目录。查看各模型实际产出的代码成果，挑选最优结果；或使用**融合（Fusion）**功能，提取各版本亮点合并生成全新会话。
 
-Give a session a finish line with **Session Goals**. OpenChamber checks the result after every turn and keeps the agent working until it completes the goal, gets blocked, or reaches the limit you set. It can continue after you close the app.
+### 变更分步引导讲解
+**变更导览（Changes Walkthrough）**可把庞大的代码差异转换成 AI 引导式的改动讲解。它会把相关改动分组整理为步骤，按逻辑顺序展示，解释各代码片段之间的关联。
 
-### Compare and combine runs
+### 运行中应用实时检视
+通过**预览（Preview）**，将你的应用和对话界面并排打开。点击页面元素，即可把截图、样式、元素坐标、浏览器报错一并发送给智能体，不再需要费力描述“这里这个控件”。桌面客户端内置浏览器，对任意网页都支持该能力。
 
-Use **Multi-run** to give the same task to up to five models, each in its own session and optionally its own worktree. See what each one actually built, choose the best result, or use **Fusion** to combine the strongest parts into a new session.
+### GitHub 全链路上下文：从 Issue 到 PR
+可基于 GitHub Issue 或 Pull Request 直接创建会话，自动挂载完整上下文。把 CI 失败信息、评审意见回传给智能体；并且能直接在 OpenChamber 内更新或合并 PR。
 
-### Guided changes walkthroughs
+### 跨设备接续工作
+桌面端、网页/PWA、VS Code、iOS、Android 可访问同一套项目与任务会话。随时查看进度、答疑、评审代码变更，重新接入正在运行的终端会话。
 
-**Changes Walkthrough** turns a large diff into an AI-guided tour of the change. It groups related edits into steps, puts them in the order the change makes sense, and explains how the pieces fit together.
+### 私有远程访问
+设备之间通过一次性二维码配对，依托**私有中继（Private Relay）**建立连接，**无需端口映射，也不用暴露公网服务**。连接采用端到端加密，可随时撤销。同时也支持直连、局域网/VPN、Cloudflare/Ngrok 隧道、SSH 连接。
 
-### Inspect a running app
+### 跨项目任务总览
+查看所有会话状态：运行中、等待、已完成、失败；同时展示审批状态、定时任务、模型服务商配额、Token 消耗与费用。可将会话归入文件夹，配套保存笔记、待办清单和项目可复用操作。
 
-Open your app beside the conversation with **Preview**. Point at an element to send the agent its screenshot, styles, position, and browser errors. No more trying to explain "this thing here." The desktop app can do the same with any web page in its built-in browser.
+### 定时执行任务
+单次、每日、每周或通过 cron 表达式定时执行指令。定时任务同样支持会话目标机制，不会单次回答后就停止，会持续向目标推进。
 
-### GitHub context from issue to pull request
-
-Start a session from a GitHub issue or pull request with its context attached. Send failed checks or review comments back to the agent, then update or merge the pull request from OpenChamber.
-
-### Continue on another device
-
-Open the same projects and sessions from Desktop, Web/PWA, VS Code, iOS, or Android. Check progress, answer questions, review changes, and reattach to a running terminal.
-
-### Private remote access
-
-Pair a device with a one-time QR code and connect through **Private Relay** without opening ports or exposing a public server. The connection is end-to-end encrypted and can be revoked at any time. Direct connections, LAN/VPN access, Cloudflare/Ngrok tunnels, and SSH are also supported.
-
-### Track work across projects
-
-See which sessions are working, waiting, finished, or failed, along with approvals, scheduled tasks, provider limits, token use, and costs. Organize sessions into folders and keep notes, todos, and reusable project actions nearby.
-
-### Schedule recurring work
-
-Run a prompt once, daily, weekly, or on a cron schedule. Scheduled tasks can use Session Goals, so they continue toward an outcome instead of stopping after one response.
-
-## Use it where you work
-
-| Surface | Role |
+## 在你常用的环境中使用
+| 运行端 | 能力说明 |
 | --- | --- |
-| **Desktop** | The complete workspace for macOS, Windows, and Linux, with multiple windows, Mini Chat, remote machines, SSH, and native notifications |
-| **Web / PWA** | Open your workspace in a browser, install it as an app, and stay up to date through background notifications |
-| **VS Code** | Keep sessions beside your code, send selections to the agent, open results in the editor, and compare parallel runs |
-| **iOS / Android** | Review and steer work away from your desk, receive completion alerts, and use the terminal with touch controls |
-| **CLI / Server** | Run OpenChamber on a workstation or server, schedule work, manage remote access, and keep it available after login |
+| **桌面端** | macOS、Windows、Linux 完整工作空间；支持多窗口、迷你对话、远程主机、SSH、原生系统通知 |
+| **网页 / PWA** | 浏览器内打开工作空间，可安装为独立应用；后台通知同步状态 |
+| **VS Code** | 在编辑器侧边常驻会话，选中代码直接发给智能体，结果在编辑器打开，对比多实例并行运行的差异 |
+| **iOS / Android** | 离开电脑也能管控、审阅任务；接收完成提醒；支持触屏终端操作 |
+| **命令行 / 服务端** | 在工作站或服务器上运行 OpenChamber，配置定时任务、管理远程访问，登出后服务持续可用 |
 
-## Quick start
+## 快速上手
+### macOS / Windows / Linux 桌面端
+从 [GitHub Releases](https://github.com/openchamber/openchamber/releases/latest) 下载最新安装包。桌面端内置配套 OpenCode CLI，无需单独安装 OpenCode。
 
-### Desktop for macOS, Windows, and Linux
-
-Download the latest release from [GitHub Releases](https://github.com/openchamber/openchamber/releases/latest). Desktop bundles the matching OpenCode CLI, so no separate OpenCode installation is required.
-
-Linux releases are available as x86_64 and ARM64 AppImages. Make the downloaded AppImage executable and keep it in a writable location for in-app updates:
-
+Linux 提供 x86_64 和 ARM64 架构 AppImage。下载后赋予可执行权限，放在可写目录才能使用应用内更新：
 ```bash
 chmod +x OpenChamber-*.AppImage
 ./OpenChamber-*.AppImage
-```
-
-Linux AppImages require FUSE (`libfuse.so.2`). Without FUSE, run with `APPIMAGE_EXTRACT_AND_RUN=1`.
-
-### VS Code
-
-Install [OpenChamber from the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=fedaykindev.openchamber), or search for "OpenChamber" in Extensions.
-
-### CLI for Web and PWA
-
-Requires Node.js 24.14+. CLI/Web and VS Code use your installed [OpenCode CLI](https://opencode.ai).
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/openchamber/openchamber/main/scripts/install.sh | bash
-openchamber --ui-password be-creative-here
-```
-
-Common operations:
-
-```bash
-openchamber status
-openchamber connect-url --qr
-openchamber tunnel start --provider cloudflare --mode quick --qr
-openchamber startup enable
-openchamber logs
-openchamber stop
-openchamber update
-```
-
-OpenChamber binds to localhost by default. Use `--lan` only on a trusted network and protect browser access with `--ui-password`.
-
-## Guides
-
-Go deeper with the OpenChamber guides:
-
-- [Quick start](packages/docs/content/docs/quickstart.mdx)
-- [Installation](packages/docs/content/docs/install.mdx)
-- [Connect devices](packages/docs/content/docs/connect-devices.mdx)
-- [Private Relay](packages/docs/content/docs/private-relay.mdx)
-- [Multi-run](packages/docs/content/docs/multi-run.mdx)
-- [Session Goals](packages/docs/content/docs/session-goals.mdx)
-- [Changes Walkthrough](packages/docs/content/docs/walkthrough.mdx)
-- [Preview and dev servers](packages/docs/content/docs/preview.mdx)
-- [GitHub workflows](packages/docs/content/docs/github.mdx)
-- [Mobile](packages/docs/content/docs/mobile.mdx)
-- [Security](packages/docs/content/docs/security.mdx)
-- [Troubleshooting](packages/docs/content/docs/troubleshooting.mdx)
-
-For self-hosting details, see the [reverse proxy guide](docs/REVERSE_PROXY.md). For custom theme authoring, see the [custom themes guide](docs/CUSTOM_THEMES.md).
-
-## Why OpenCode?
-
-OpenChamber uses [OpenCode](https://opencode.ai) to run coding agents. We chose it because it is open source, has a solid API, and is easy to extend.
-
-OpenChamber handles the rest of the workflow. You can decide what to try, keep the agent on track, review the result, connect from another device, and ship the change.
-
-OpenChamber is an independent project and is not affiliated with the OpenCode team.
-
-## Contributing
-
-Bug fixes and small improvements are welcome as PRs. Features and behavior changes start in an [Ideas discussion](https://github.com/openchamber/openchamber/discussions/categories/ideas) so we agree on the product side before anyone writes code. Read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a PR; it has the setup, the review contract, and what happens to large unplanned PRs. Documentation authoring guidance lives in [`packages/docs`](packages/docs/README.md).
-
-Bugs go to [issues](https://github.com/openchamber/openchamber/issues/new/choose). Questions go to [Q&A discussions](https://github.com/openchamber/openchamber/discussions/categories/q-a).
-
-## Acknowledgments
-
-Special thanks to:
-
-- [OpenCode](https://opencode.ai) for the API and open-source architecture OpenChamber builds on
-- [Pierre](https://pierrejs-docs.vercel.app/) for the diff viewer and syntax highlighting
-- The [T3 Code](https://github.com/pingdotgg/t3code) team for their browser adapter for [libghostty-vt](https://github.com/ghostty-org/ghostty), which our terminal is built on
-- [Yulia Ivashko](https://github.com/yulia-ivashko), who built the firework celebration that plays on every successful push
-- Everyone who contributed code, reported bugs, or shared ideas
-
-## License
-
-MIT
